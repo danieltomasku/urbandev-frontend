@@ -296,14 +296,13 @@ input[type="checkbox"] {
 
 .form-control {
     display: block;
-    width: 100%;
     height: 34px;
     padding: 6px 12px;
     font-size: 14px;
     line-height: 1.42857143;
     color: #000000;
-    background-color: #fff;
     background-image: none;
+    background: transparent;
     border: 2px solid #000;
     border-radius: 0px;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
@@ -313,13 +312,18 @@ input[type="checkbox"] {
     transition: border-color ease-in-out .3s,box-shadow ease-in-out .3s;
 }
 
-.select {
-    select  {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-    }
+select  {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  position: relative;
+  cursor: pointer;
+  z-index: 10;
+}
 
+.select {
+  position: relative;
+  z-index: 5;
 }
 
 .select:after {
@@ -327,12 +331,27 @@ input[type="checkbox"] {
     font-family: "FontAwesome";
     display: block;
     position: absolute;
-    top: 40px;
-    right: 25px;
-    font-size: 22px;
-    pointer-events: none;
+    right: 10px;
+    font-size: 20px;
+}
+.select-nbhood:after {
+    top: 43px;
 
 }
+
+.select-timeframe:after {
+    top: 4px;
+}
+
+
+#contact-form .form-control {
+    background-color: white;
+}
+
+#contact-form .form-group {
+    margin-bottom: 0px;
+}
+
 //---------------MODAL------------------------------
 .modal-dialog {
     position: relative;
@@ -379,12 +398,6 @@ z-index: 3000;
 font-size: 100px;
 }
 
-
-
-button#plot-submit {
-    letter-spacing: 1px;
-    margin: 15px 0px;
-}
 
 #metadata a:hover {
   color: #2198FF;
@@ -784,6 +797,15 @@ output {
       margin-right: auto;
       margin-left: auto;
   }
+
+
+#about .intro-text {
+    width: 90%;
+    margin: 28px auto;
+    line-height: 26px;
+    text-align: justify;
+    letter-spacing: 0px;
+}
 
 }
 
